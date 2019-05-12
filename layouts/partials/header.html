@@ -1,8 +1,13 @@
 {{ $curLanguageName := .Site.Language.LanguageName }}
 <header>
   <div class="signatures site-title">
-    <a href="{{ .LanguagePrefix }}/">{{ .Site.Author.name }}</a>
+    <a href="{{ .LanguagePrefix }}/">{{ .Site.Title }}</a>
   </div>
+  {{ range .Site.Params.socials }}
+  <div class="site-header-item">
+    <a href="{{ .link }}" target="_blank">{{ .name }}</a>
+  </div>
+  {{ end }}
 </header>
 <div class="row end-xs">
   {{ range .Site.Languages -}}
